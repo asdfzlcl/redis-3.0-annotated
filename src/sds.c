@@ -158,7 +158,9 @@ void sdsfree(sds s) {
     zfree(s-sizeof(struct sdshdr));
 }
 
-// 未使用函数，可能已废弃
+/*
+ *通过外部操作改变字符串长度后，更新free和len。
+ */
 /* Set the sds string length to the length as obtained with strlen(), so
  * considering as content only up to the first null term character.
  *
